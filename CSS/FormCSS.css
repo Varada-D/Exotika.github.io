@@ -29,8 +29,12 @@ input[type=submit], input[type=reset] {
 	border-radius: 5px;
 	padding: 1.5vh 2vh;
 	cursor: pointer;
-	margin-right: 2vh;
 	transition-duration: 1s;
+}
+
+
+input[type=submit] {
+	margin-right: 2vh;
 }
 
 input[type=submit]:hover, input[type=reset]:hover {
@@ -41,6 +45,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 #SignInForm p {
 	font-size: 120%;
+	text-align: center;
 }
 
 
@@ -63,11 +68,11 @@ input[type=submit]:hover, input[type=reset]:hover {
 #Register {
 	background: url('../Images/bg2.jpg') no-repeat center;
 	background-size: cover;
-	width: 50vw;
+	width: 50%;
 	padding: 10vh;
 	position: fixed;
 	top: 40vh;
-	left: 25vw;
+	left: 20vw;
 	display: none;
 	border: 2px solid rgb(0,146,106);
 	border-radius: 10px;
@@ -133,4 +138,58 @@ input[type=submit]:hover, input[type=reset]:hover {
 #Register .modal-body ul li a:hover {
 	text-decoration: underline;
 	font-weight: 900;
+}
+
+
+
+@media screen and (max-width: 1330px) {
+	#SignInForm, #Register {
+		width: 60vw;
+	}
+}
+
+
+
+@media screen and (max-width: 880px) {
+	#SignInForm, #Register {
+		width: 75vw;
+	}
+	#Register {
+		left: 12.5vw;
+	}
+}
+
+
+
+@media screen and (max-width: 700px) {
+	#SignInForm label {
+		display: block;
+	}
+}
+
+
+
+@media screen and (max-width: 480px) {
+	#SignInForm, #Register {
+		padding: 5vw;
+	}
+	input[type=text], input[type=email], input[type=password] {
+		width: 85%;
+	}
+}
+
+
+
+@media screen and (max-width: 355px) {
+	#SignInForm {
+		width: 100%;
+	}
+	#Register {
+		left: 5vw;
+		width: 90%;
+	}
+	input[type=submit] {
+		margin-right: 0;
+		margin-bottom: 2vh;
+	}
 }
