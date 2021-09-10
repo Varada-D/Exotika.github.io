@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="icon" href="Images/Logo.png" type="image/png"> 
 		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="CSS/FormCSS.css">
 		<link rel="stylesheet" href="CSS/VisitorPortalCSS.css">
 	</head>
 
@@ -43,15 +44,15 @@
 			<section id="SearchResults">
 				<div id="tabs">
 					<div class="nav nav-tabs" id="nav-tab" role="tablist">
-						<button class="nav-link active" id="nav-resorts-tab" data-toggle="tab" data-target="#nav-resorts" type="button" role="tab" aria-controls="nav-resorts" aria-selected="true">Resorts</button>
-						<button class="nav-link" id="nav-fests-tab" data-toggle="tab" data-target="#nav-fests" type="button" role="tab" aria-controls="nav-fests" aria-selected="false">Fairs and Festivals Calender</button>
-						<button class="nav-link" id="nav-handicrafts-tab" data-toggle="tab" data-target="#nav-handicrafts" type="button" role="tab" aria-controls="nav-handicrafts" aria-selected="false">Local Handicrafts</button>
+						<button class="nav-link active" id="nav-resorts" data-toggle="tab" data-target="#nav-resorts" type="button" role="tab" aria-controls="nav-resorts" aria-selected="true">Resorts</button>
+						<button class="nav-link" id="nav-fests" data-toggle="tab" data-target="#nav-fests" type="button" role="tab" aria-controls="nav-fests" aria-selected="false">Fairs and Festivals Calender</button>
+						<button class="nav-link" id="nav-handicrafts" data-toggle="tab" data-target="#nav-handicrafts" type="button" role="tab" aria-controls="nav-handicrafts" aria-selected="false">Local Handicrafts</button>
 					</div>
 				</div>
 				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">No Resort Data Available Currently...</div>
-					<div class="tab-pane fade" id="nav-fests" role="tabpanel" aria-labelledby="nav-fests-tab">No Data for Fairs and Festivals is Currently Available...</div>
-					<div class="tab-pane fade" id="nav-handicrafts" role="tabpanel" aria-labelledby="nav-handicrafts-tab">No Data for Local Handicrafts is Currently Available...</div>
+					<div class="tab-pane fade show active" id="nav-home-content" role="tabpanel" aria-labelledby="nav-home-tab">No Resort Data Available Currently...</div>
+					<div class="tab-pane fade" id="nav-fests-content" role="tabpanel" aria-labelledby="nav-fests-tab">No Data for Fairs and Festivals is Currently Available...</div>
+					<div class="tab-pane fade" id="nav-handicrafts-content" role="tabpanel" aria-labelledby="nav-handicrafts-tab">No Data for Local Handicrafts is Currently Available...</div>
 				</div>
 			</section>
 		</main>	
@@ -72,5 +73,21 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 		<script src="JS/NavigationBar.js"></script>
+		<script>
+			$(function () {
+				"use strict";
+				$(".nav-link").on("click", function () {
+					// Get The ID Of a When I Clicked
+					var myID = $(this).attr("id");
+					// Remove Class Inactive When I clicked And Add It In Siblings In Ul
+					//$(this).addClass("inactive").siblings().removeClass("inactive");
+					$(this).removeClass("active").siblings().addClass("active");
+					// Hide The Div When i Clicked
+					$(".tab-content div").hide();
+        				// When Clicked In Li Get Div Same ID
+	        			$("#" + myID + "-content").fadeIn(1000);
+   				 });
+			});
+		</script>
 	</body>
 </html>
