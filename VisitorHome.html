@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-home-content" role="tabpanel" aria-labelledby="nav-home-tab">No Resort Data Available Currently...</div>
+					<div class="tab-pane fade show active" id="nav-resorts-content" role="tabpanel" aria-labelledby="nav-resorts-tab">No Resort Data Available Currently...</div>
 					<div class="tab-pane fade" id="nav-fests-content" role="tabpanel" aria-labelledby="nav-fests-tab">No Data for Fairs and Festivals is Currently Available...</div>
 					<div class="tab-pane fade" id="nav-handicrafts-content" role="tabpanel" aria-labelledby="nav-handicrafts-tab">No Data for Local Handicrafts is Currently Available...</div>
 				</div>
@@ -70,21 +70,16 @@
 		</footer>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 		<script src="JS/NavigationBar.js"></script>
 		<script>
 			$(function () {
 				"use strict";
+				$(".tab-content div").hide();
+				$("#nav-resorts-content").show();
 				$(".nav-link").on("click", function () {
-					// Get The ID Of a When I Clicked
 					var myID = $(this).attr("id");
-					// Remove Class Inactive When I clicked And Add It In Siblings In Ul
-					//$(this).addClass("inactive").siblings().removeClass("inactive");
 					$(this).removeClass("active").siblings().addClass("active");
-					// Hide The Div When i Clicked
 					$(".tab-content div").hide();
-        				// When Clicked In Li Get Div Same ID
 	        			$("#" + myID + "-content").fadeIn(1000);
    				 });
 			});
