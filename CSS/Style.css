@@ -17,10 +17,16 @@ header {
 	width: 100vw;
 }
 
-header>a {
+header>div>a {
 	float: right;
 	margin-right: 10vh;
 	margin-top: 5vh;
+}
+
+header>div>a:first-child {
+	float: left;
+	margin-top: 0;
+	margin-right: 0;
 }
 
 
@@ -45,8 +51,8 @@ header>a {
 
 .SignInRegisterBtn:hover {
 	background-color: rgb(0,146,106);
-	font-size: 120%;
-	transition-duration: 1s;
+	font-size: 110%;
+	transition-duration: 0.5s;
 }
 
 
@@ -438,7 +444,18 @@ footer div i {
 
 
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width:1400px) {
+	header>nav>ul>li {
+		padding: 2vh 0 2vh 2vh;
+	}
+	#SignInRegisterBtnLS {
+		margin-right: 2.5vh;
+	}
+}
+
+
+
+@media screen and (max-width: 900px) {
 
 	header {
 		padding: 2vh 0 0 0;
@@ -501,6 +518,16 @@ footer div i {
 	.topnav.responsive>ul>li:nth-child(2) {
 		margin-top: 5vh;
 	}
+
+	#SignInRegisterBtnSS {
+		display: inline-block;
+		float: left;
+		margin: 2vh;
+	}
+	
+	#SignInRegisterBtnLS {
+		display: none;
+	}
 }
 
 
@@ -515,14 +542,6 @@ footer div i {
 	}
 	footer>div {
 		margin: 5vh 0;
-	}
-	#SignInRegisterBtnSS {
-		display: inline-block;
-		float: left;
-		margin: 2vh;
-	}
-	#SignInRegisterBtnLS {
-		display: none;
 	}
 }
 

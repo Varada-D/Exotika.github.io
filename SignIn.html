@@ -13,18 +13,19 @@
 
 	<body>
 		<header id="header">
-			<img src="Images/ExotikaLogo.png" id="logo" alt="Exotika: A Complete Marketplace for Resorts Pan India"/>
-			<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnLS">Sign In/Register</a>
+			<div>
+				<a href="index.html" tabindex="1"><img src="Images/ExotikaLogo.png" id="logo" alt="Exotika: A Complete Marketplace for Resorts Pan India"/></a>
+				<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnLS">Sign In/Register</a>
+			</div>
 			<nav class="topnav" id="navbar">
 				<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnSS">Sign In/Register</a>
 				<ul>
 					<li><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
-					<li><a href="index.html" tabindex="1">Home</a></li>
 					<li><a href="VisitorHome.html" tabindex="2">Visitor(Tourist)</a></li>
 					<li><a href="ResortOwnerHome.html" tabindex="3">Resort Owner</a></li>
 					<li><a href="VendorHome.html" tabindex="4">Vendor</a></li>
 					<li><a href="HandicraftDealer.html" tabindex="5">Local Handicraft Dealer</a></li>
-					<li><a href="Contact.html" tabindex="6">Submit Feedback/Grievances</a></li>
+					<li><a href="Contact.html" tabindex="6">Feedback</a></li>
 				</ul>	
 			</nav>
 		</header>
@@ -38,7 +39,7 @@
 					<input type="email" name="email" id="email" placeholder="Registered e-mail ID" required/><br><br>
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" placeholder="Password" required/><br><br><br>
-					<input type="submit" value="Sign In"/>
+					<input type="submit" value="Sign In" onclick="AdminCredentialCheck()"/>
 					<input type="reset" value="Reset Fields"/>
 				</form>
 				<br><br>
@@ -52,10 +53,10 @@
 					</div>
 					<div class="modal-body">
 						<ul>
-							<li><a href="VisitorRegistration.html">Visitor(Tourist)</a></li>
+							<li><a href="TouristRegistration.html">Visitor(Tourist)</a></li>
 							<li><a href="ResortOwnerRegistration.html">Resort Owner</a></li>
 							<li><a href="VendorRegistration.html">Product/Service Vendor</a></li>
-							<li><a href="LocalHandicraftDealerRegistration.html">Local Handicraft Dealer</a></li>
+							<li><a href="HandicraftDealerRegistration.html">Local Handicraft Dealer</a></li>
 						</ul>
 					</div>
 				</div>
@@ -93,6 +94,18 @@
 							return a=1;
 						}
 				}
+		</script>
+		<script>
+			function AdminCredentialCheck() {
+				var email = document.getElementById("email").value;
+				var pwd = document.getElementById("password").value;
+				if (email=="admin@exotika.com" && pwd=="Exotika") {
+					window.open("AdminDashboard.html");
+				}
+				else {
+					alert("Incorrect user ID/ password");
+				}
+			}
 		</script>
 
 	</body>

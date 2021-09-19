@@ -1,10 +1,40 @@
-#SignInForm {
+#RegistrationForm, #SignInForm {
 	width: 50%;
 	margin: 0 auto;
 	background-color: rgb(3,46,87);
 	padding: 10vh;
 	color: rgb(255,255,255);
 }
+
+
+#FeedbackGrievanceForm form {
+	background-color: rgb(3,46,87);
+	padding: 10vh 5vh;
+	color: rgb(255,255,255);
+}
+
+
+table {
+	margin-bottom: 5vh;
+}
+
+
+td {
+	padding: 2vh;
+}
+
+
+#FeedbackGrievanceForm input[type=submit] {
+	float: left;
+	margin-left: 5vh;
+}
+
+
+#FeedbackGrievanceForm input[type=reset] {
+	float: right;
+	margin-right: 15vh;
+}
+
 
 label {
 	font-size: 120%;
@@ -52,7 +82,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 }
 
 
-#SignInForm button  {
+#SignInForm button, #RegistrationForm button  {
 	background-color: rgb(3,46,87);
 	color: rgb(244, 247, 118);
 	border: 2px solid rgb(0,146,106);
@@ -62,7 +92,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 }
 
 
-#SignInForm button:hover {
+#SignInForm button:hover, #RegistrationForm button:hover {
 	border: none;
 	text-decoration: underline;
 }
@@ -147,7 +177,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 @media screen and (max-width: 1330px) {
-	#SignInForm, #Register {
+	#SignInForm, #Register, #RegistrationForm {
 		width: 60vw;
 	}
 }
@@ -155,7 +185,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 @media screen and (max-width: 880px) {
-	#SignInForm, #Register {
+	#SignInForm, #Register, #RegistrationForm {
 		width: 75vw;
 	}
 	#Register {
@@ -166,15 +196,17 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 @media screen and (max-width: 700px) {
-	#SignInForm label {
+	#SignInForm label, #RegistrationForm label {
 		display: block;
 	}
 }
 
 
 
+
+
 @media screen and (max-width: 480px) {
-	#SignInForm, #Register {
+	#SignInForm, #Register, #RegistrationForm {
 		padding: 5vw;
 	}
 	input[type=email], input[type=password] {
@@ -185,7 +217,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 @media screen and (max-width: 355px) {
-	#SignInForm {
+	#SignInForm, #RegistrationForm {
 		width: 100%;
 	}
 	#Register {

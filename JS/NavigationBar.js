@@ -23,11 +23,11 @@ function scrollFunction() {
 	if (document.body.scrollTop>80 || document.documentElement.scrollTop>80)
 		{
 			document.getElementById('logo').style.width = "25vh";
-			document.getElementsById('SignInRegisterBtnLS').style.marginTop = "2.5vh";
+			document.getElementById('SignInRegisterBtnLS').style.marginTop = "2.5vh";
 		}
 	else
 		{
 			document.getElementById('logo').style.width = "45vh";
-			document.getElementsById('SignInRegisterBtnLS').style.marginTop = "5vh";
+			document.getElementById('SignInRegisterBtnLS').style.marginTop = "5vh";
 		}
 }

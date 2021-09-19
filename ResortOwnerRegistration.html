@@ -5,39 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Exotika | A Complete Marketplace for resorts pan India</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="icon" href="Images/Logo.png" type="image/png">
+		<link rel="icon" href="Images/Logo.png" type="image/png"> 
 		<link rel="stylesheet" href="CSS/Style.css">
 		<link rel="stylesheet" href="CSS/FormCSS.css">
 		<style>
-			#FeedbackGrievanceForm {
+			#RegistrationForm {
 				padding: 10vh 0;
-				width: 60%;
-				margin: 0 auto;
 			}
-			#FeedbackGrievanceForm form {
+			form {
 				padding-left: 15%;
 			}
 			label {
 				display: block;
 				font-size: 150%;
 				margin-bottom: 10px;
-				margin-top: 40px;
+				margin-top: 20px;
 			}
 			textarea {
 				resize: vertical;
 				min-height: 100px;
-			}
-			@media screen and (max-width: 850px) {
-				#FeedbackGrievanceForm input[type=submit] {
-					clear: both;
-					width: 100%;
-					margin: 20px 0 20px 0;
-				}
-				#FeedbackGrievanceForm input[type=reset] {
-					clear: both;
-					width: 100%;
-					margin: 0;
-				}
 			}
 		</style>
 	</head>
@@ -57,31 +43,35 @@
 					<li><a href="ResortOwnerHome.html" tabindex="3">Resort Owner</a></li>
 					<li><a href="VendorHome.html" tabindex="4">Vendor</a></li>
 					<li><a href="HandicraftDealer.html" tabindex="5">Local Handicraft Dealer</a></li>
-					<li><a href="Contact.html" tabindex="6" id="active">Feedback</a></li>
+					<li><a href="Contact.html" tabindex="6">Feedback</a></li>
 				</ul>	
 			</nav>
 		</header>
 
 
 		<main>
-			<section id="FeedbackGrievanceForm">
-				<h1>Feedback/Grievance Form</h1><br><br>
+			<section id="RegistrationForm">
+				<h1>Register as Resort Owner</h1>
 				<form method="post">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name"/>
-					<label for="PhNo">Phone Number</label>
-					<input type="tel" name="PhNo" id="PhNo"/>
-					<label for="email">Email ID</label>
-					<input type="email" name="email" id="email"/>
-					<label for="contactType">Select Option</label>
-					<select name="contactType" id="contactType">
-						<option>Feedback</option>
-						<option>Grievance</option>
-					</select>
-					<label for="message">Your Message</label>
-					<textarea id="message" placeholder="Your Feedback/Grievance..."></textarea><br><br>
-					<input type="submit" value="Sign In"/>
-					<input type="reset" value="Reset Fields"/>
+						<input type="hidden" id="UserType" name="UserType" value="Tourist"/><br><br><br>
+						<label for="resortName">Name of the Resort</label>
+						<input type="text" name="resortName" id="resortName" placeholder="Resort Name"/><br><br><br>
+						<label for="name">Name of the Resort Owner</label>
+						<input type="text" name="name" id="name" placeholder="Full Name"/><br><br><br>
+						<label for="PhNo">Contact Number</label>
+						<input type="tel" name="PhNo" id="PhNo" placeholder="Contact Number"/><br><br><br>
+						<label for="email">E-mail ID</label>
+						<input type="email" name="email" id="email" placeholder="Registered e-mail ID" required/><br><br>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" placeholder="Password" required/><br><br><br>
+						<label for="confPassword">Confirm Password</label>
+						<input style="margin-bottom: 0;" type="password" name="confPassword" id="confPassword" placeholder="Confirm Password" required/><br><br><br>
+						<p id="message" style="margin-top:0; padding-top:0;" ></p>
+						<label for="Address">Resort Address</label>
+						<textarea name="Address" id="Address" placeholder="Resort Address"></textarea><br><br><br>
+						<br><br><br>
+						<input type="submit" value="Submit" id="submit" onclick="chkpwd()"/>
+						<input type="reset" value="Reset Fields"/>
 				</form>
 			</section>
 		</main>	
@@ -100,6 +90,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="JS/NavigationBar.js"></script>
+		<script src="JS/Form.js"></script>
 
 	</body>
 </html>

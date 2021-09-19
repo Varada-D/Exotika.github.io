@@ -9,38 +9,156 @@
 		<link rel="stylesheet" href="CSS/Style.css">
 		<link rel="stylesheet" href="CSS/FormCSS.css">
 		<link rel="stylesheet" href="CSS/VisitorPortalCSS.css">
+		<style>
+			div.content {
+				background-color: rgb(255,255,255);
+				padding: 5vh;
+				color: rgb(0,0,0);
+				margin: 5vh 0;
+				display: flex;
+				justify-content: center;
+			}
+			div.content img {
+				width: 32%;
+				float: left;
+			}
+			div.content div {
+				width: 66%;
+				float: right;
+				padding-left: 20px;
+			}
+			label {
+				display: block;
+				font-size: 130%;
+				font-weight: 500;
+			}
+			.button {
+  				border: none;
+	  			color: white;
+  				padding: 15px 32px;
+  				text-align: center;
+  				text-decoration: none;
+	  			display: inline-block;
+  				font-size: 18px;
+  				margin: 4px 2px;
+  				cursor: pointer;
+				background-color: rgb(0,146,106);
+			}
+			.button:hover {
+				background-color: rgb(0,110,80);
+			}
+			@media screen and (max-width: 1050px) {
+				div.content img {
+					width: 45%;
+					float: left;
+				}
+				div.content div {
+					width: 52%;
+					float: right;
+					padding-left: 20px;
+				}
+			}
+			@media screen and (max-width: 900px) {
+				div.content {
+					display: block;
+				}
+				div.content img {
+					display: block;
+					width: 100%;
+					margin-bottom: 40px;
+				}
+				div.content div {
+					display: block;
+					width: 100%;
+					padding-left: 0;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				div.tab-pane {
+					padding: 2vh;
+				}
+				div.content {
+					padding: 2vh;
+				}
+			}
+		</style>
 	</head>
 
 
 	<body>
 		<header id="header">
-			<img src="Images/ExotikaLogo.png" id="logo" alt="Exotika: A Complete Marketplace for Resorts Pan India"/>
-			<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnLS">Sign In/Register</a>
+			<div>
+				<a href="index.html" tabindex="1"><img src="Images/ExotikaLogo.png" id="logo" alt="Exotika: A Complete Marketplace for Resorts Pan India"/></a>
+				<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnLS">Sign In/Register</a>
+			</div>
 			<nav class="topnav" id="navbar">
 				<a href="SignIn.html" class="SignInRegisterBtn" id="SignInRegisterBtnSS">Sign In/Register</a>
 				<ul>
 					<li><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
-					<li><a href="index.html" tabindex="1">Exotika Home</a></li>
-					<li><a href="VisitorHome.html" tabindex="2" id="active">Visitor(Tourist) Home</a></li>
-					<li><a href="ResortsAndAttractions.html" tabindex="3">Resorts and Attractions</a></li>
-					<li><a href="Contact.html" tabindex="4">Submit Feedback/Grievances</a></li>
+					<li><a href="VisitorHome.html" id="active" tabindex="2">Visitor(Tourist)</a></li>
+					<li><a href="ResortOwnerHome.html" tabindex="3">Resort Owner</a></li>
+					<li><a href="VendorHome.html" tabindex="4">Vendor</a></li>
+					<li><a href="HandicraftDealer.html" tabindex="5">Local Handicraft Dealer</a></li>
+					<li><a href="Contact.html" tabindex="6">Feedback</a></li>
 				</ul>	
 			</nav>
 		</header>
 
 
 		<main>
-			<section id="Search">
-				<p>Search for a city to view in and nearby resorts, attractions, local handicrafts and fairs/festivals.</p>
-				<br>
-				<form class="SearchBar">
-					<input type="text" placeholder="Search..."/>
-					<button type="submit" class="SearchBtn"><i class="fa fa-search fa-custom"></i></button>
-				</form>
-			</section>
-
-			<br><br><br><br>
-
+			<p style="font-size:145%;">Search for a city to view in and nearby resorts, attractions, local handicrafts and fairs/festivals.</p>
+			<br>
+			<form>
+				<label for="stateSelect">States and UTs:</label>
+				<select name="state" id="stateSelect" onchange="makeSubmenu(this.value)" style="width:92.5%;">
+					<option value="" disabled selected>Choose State</option>
+					<option value="andaman_and_nicobar">Andaman and Nicobar Islands</option>
+					<option value="andhra_pradesh">Andhra Pradesh</option>
+					<option value="arunanchal_pradesh">Arunanchal Pradesh</option>
+					<option value="assam">Assam</option>
+					<option value="bihar">Bihar</option>
+					<option value="chandigarh">Chandigarh</option>
+					<option value="chhattisgarh">Chhattisgarh</option>
+					<option value="dadra_nagar_haveli">Dadra and Nagar Haveli and Daman and Diu</option>
+					<option value="delhi">Delhi</option>
+					<option value="goa">Goa</option>
+					<option value="gujrat">Gujrat</option>
+					<option value="haryana">Haryana</option>
+					<option value="himachal_pradesh">Himachal Pradesh</option>
+					<option value="jammu_and_kashmir">Jammu and Kashmir</option>
+					<option value="jharkhand">Jharkhand</option>
+					<option value="karnataka">Karnataka</option>
+					<option value="kerala">Kerala</option>
+					<option value="ladakh">Ladakh</option>
+					<option value="lakshadweep">Lakshadweep</option>
+					<option value="madhya_pradesh">Madhya Pradesh</option>
+					<option value="maharashtra">Maharashtra</option>
+					<option value="manipur">Manipur</option>
+					<option value="meghalaya">Meghalaya</option>
+					<option value="mizoram">Mizoram</option>
+					<option value="nagaland">Nagaland</option>
+					<option value="odisha">Odisha</option>
+					<option value="puducherry">Puducherry</option>
+					<option value="punjab">Punjab</option>
+					<option value="rajasthan">Rajasthan</option>
+					<option value="sikkim">Sikkim</option>
+					<option value="tamil_nadu">Tamil Nadu</option>
+					<option value="telangana">Telangana</option>
+					<option value="tripura">Tripura</option>
+					<option value="uttarakhand">Uttarakhand</option>
+					<option value="uttar_pradesh">Uttar Pradesh</option>
+					<option value="west_bengal">West Bengal</option>
+				</select>
+				<br><br>
+				<label for="citySelect">City:</label>
+				<select id="citySelect" size="1" name="city" style="width:92.5%;">
+					<option value="" disabled selected>Choose City</option>
+				</select>
+				<br><br>
+				<input style="margin-left: 20px;" type="submit" value="Search">
+			</form>
+				<br><br><br><br>
+			
 			<section id="SearchResults">
 				<div id="tabs">
 					<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -50,14 +168,69 @@
 					</div>
 				</div>
 				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-resorts-content" role="tabpanel" aria-labelledby="nav-resorts-tab">No Resort Data Available Currently...</div>
-					<div class="tab-pane fade" id="nav-fests-content" role="tabpanel" aria-labelledby="nav-fests-tab">No Data for Fairs and Festivals is Currently Available...</div>
-					<div class="tab-pane fade" id="nav-handicrafts-content" role="tabpanel" aria-labelledby="nav-handicrafts-tab">No Data for Local Handicrafts is Currently Available...</div>
+					<div class="tab-pane fade show active" id="nav-resorts-content" role="tabpanel" aria-labelledby="nav-resorts">
+						<div class="content nav-resorts-content-div">
+							<img src="images/CrescentResort.jpg" alt="Image of the Resort: Cresent Resort"/>
+							<div class="nav-resorts-content-info">
+								<h2>Crescent Resort</h2><br>
+								<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
+								<h3>Phone: 9685040007</h3>
+								<h3>Email: gm@crescentresort.in</h3><br>
+								<a href="" class="button">View More</a>
+							</div>
+						</div>
+						<div class="content nav-resorts-content-div">
+							<img src="images/GlobalResort.jpg" alt="Image of the Resort"/>
+							<div class="nav-resorts-content-info">
+								<h2>Global Resort</h2><br>
+								<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
+								<h3>Phone: 9586730210</h3>
+								<h3>Email: gm@globalresort.in</h3><br>
+								<a href="" class="button">View More</a>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="nav-fests-content" role="tabpanel" aria-labelledby="nav-fests">
+						<div class="content nav-fests-content-div">
+							<img src="images/festival.jpg" alt="Image of the Festival"/>
+							<div class="nav-fests-content-info">
+								<h2>Festival Name</h2>
+								<h3>Date or Range</h3>
+								<p>Short Description</p>
+							</div>
+						</div>
+						<div class="content nav-fests-content-div">
+							<img src="images/festival.jpg" alt="Image of the Festival"/>
+								<div class="nav-fests-content-info">
+								<h2>Festival Name</h2>
+								<h3>Date or Range</h3>
+								<p>Short Description</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="nav-handicrafts-content" role="tabpanel" aria-labelledby="nav-handicrafts">
+						<div class="content nav-handicrafts-content-div">
+							<img src="images/handicraft.jpg" alt="Image of the Handicraft"/>
+							<div class="nav-handicrafts-content-info">
+								<h2>Handicraft Name</h2>
+								<p>Short Description</p>
+								<h3>Dealer Name</h3>
+								<p>Dealer Details</p>
+							</div>
+						</div>
+						<div class="content nav-handicrafts-content-div">
+							<img src="images/handicraft.jpg" alt="Image of the Handicraft"/>
+							<div class="nav-handicrafts-content-info">
+								<h2>Handicraft Name</h2>
+								<p>Short Description</p>
+								<h3>Dealer Name</h3>
+								<p>Dealer Details</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>	
-
-
 
 		<footer>
 			<div>
@@ -76,11 +249,19 @@
 				"use strict";
 				$(".tab-content div").hide();
 				$("#nav-resorts-content").show();
+				$(".nav-resorts-content-div").show();
+				$(".nav-resorts-content-info").show();
 				$(".nav-link").on("click", function () {
 					var myID = $(this).attr("id");
 					$(this).removeClass("active").siblings().addClass("active");
 					$(".tab-content div").hide();
+					console.log(myID);
+					console.log("#" + myID + "-content");
+					console.log("." + myID + "-content-div");
+					console.log("." + myID + "-content-info");
 	        			$("#" + myID + "-content").fadeIn(1000);
+	        			$("." + myID + "-content-div").fadeIn(1000);
+	        			$("." + myID + "-content-info").fadeIn(1000);
    				 });
 			});
 		</script>
