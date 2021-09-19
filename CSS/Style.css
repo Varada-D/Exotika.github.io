@@ -186,7 +186,7 @@ div.Portal div.card {
 	padding: 5vh 2vh 2vh 2vh;
 }
 
-#GoToPortalBtn {
+.GoToPortalBtn {
 	display: inline-block;
 	color: rgb(255,255,255);
 	background-color: rgb(0,146,106);
@@ -201,12 +201,12 @@ div.Portal div.card {
 }
 
 
-#GoToPortalBtn:hover {
+.GoToPortalBtn:hover {
 	background: none;
 }
 
 
-#GoToPortalBtn span {
+.GoToPortalBtn span {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
@@ -215,7 +215,7 @@ div.Portal div.card {
 }
 
 
-#GoToPortalBtn span:after {
+.GoToPortalBtn span:after {
 	color: rgb(244,247,118);
 	content: '>>';
 	position: absolute;
@@ -226,19 +226,19 @@ div.Portal div.card {
 }
 
 
-#GoToPortalBtn:hover span {
+.GoToPortalBtn:hover span {
 	padding-right: 25px;
 	color: rgb(244,247,118);
 }
 
 
-#GoToPortalBtn:hover span:after {
+.GoToPortalBtn:hover span:after {
 	opacity: 1;
 	right: 0;
 }
 
 
-#GoToPortalBtn:active {
+.GoToPortalBtn:active {
 	background-color: rgb(0,146,106);
 	box-shadow: 0 5px rgb(255,255,255);
 	color: rgb(255,255,255);
@@ -246,12 +246,12 @@ div.Portal div.card {
 }
 
 
-#GoToPortalBtn:active span:after {
+.GoToPortalBtn:active span:after {
 	color: rgb(3,46,87);
 }
 
 
-#GoToPortalBtn a {
+.GoToPortalBtn a {
 	text-decoration: none;
 }
 
