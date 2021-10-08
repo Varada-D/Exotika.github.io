@@ -26,7 +26,7 @@ function drawChart() {
 	};
 
 
-	// Display the chart inside the <div> element with id="piechart"
+	// Display the chart inside the <div> element with id="StatChart"
 	var chart = new google.visualization.LineChart(document.getElementById('StatChart'));
 	chart.draw(data, options);
 }

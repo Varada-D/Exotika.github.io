@@ -99,8 +99,14 @@
 			function AdminCredentialCheck() {
 				var email = document.getElementById("email").value;
 				var pwd = document.getElementById("password").value;
-				if (email=="admin@exotika.com" && pwd=="Exotika") {
+				if (email=="admin@exotika.com" && pwd=="admin") {
 					window.open("AdminDashboard.html");
+				}
+				else if (email=="resort@exotika.com" && pwd=="resort") {
+					window.open("ResortOwnerDashboard.html");
+				}
+				else if (email=="vendor@exotika.com" && pwd=="vendor") {
+					window.open("VendorDashboard.html");
 				}
 				else {
 					alert("Incorrect user ID/ password");

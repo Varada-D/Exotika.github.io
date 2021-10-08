@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>User Dashboard | Exotika</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="Images/Logo.png" type="image/png">
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="CSS/DashboardCSS.css">
+		<style>
+			.BlurBg {
+				filter: blur(5px);
+			}
+			#Details, #EditDetails {
+				margin: 20vh auto;
+				padding: 5vh 5vh;
+				width: 85%;
+				background: rgb(255,255,255);
+				border: 2px solid rgb(0,0,0);
+				border-radius: 10px;
+			}
+			#Details {
+				background: rgba(255,255,255,0);
+				border: none;
+				padding: 0;
+			}
+			#Details p {
+				font-size: 110%;
+			}
+			#EditDetails {
+				position: absolute;
+				top: 0;
+				margin-left: 6vw;
+				display: none;
+			}
+			#EditDetails label {
+				float: left;
+				margin-top: 5vh;
+			}
+			.btn, #EditDetails input {
+				margin-top: 2.5vh;
+				width: 95%;
+				margin-left: 5%;
+				padding: 2vh;
+				border: 2px solid rgb(0,0,0);
+				border-radius: 10px;
+				font-size: 110%;
+			}
+			.btn, #EditDetails input[type=submit], #EditDetails input[type=reset] {
+				width: auto;
+				margin-left: 0;
+				margin-top: 5%;
+				cursor: pointer;
+				transition-duration: 0.5s;
+				margin-right: 20px;
+			}
+			.btn:hover, #EditDetails input[type=submit]:hover, #EditDetails input[type=reset]:hover {
+				background-color: rgb(0,146,106);
+				color: rgb(255,255,255);
+			}
+			div.content-box {
+				background-color: rgb(255,255,255);
+				padding: 5vh;
+				color: rgb(0,0,0);
+				margin: 5vh 0;
+				display: flex;
+				justify-content: center;
+				border-radius: 12px;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				border: 2px solid rgb(0,0,0);
+			}
+			div.content-box img {
+				width: 32%;
+				float: left;
+				border-radius: 12px;
+				border: 2px solid rgb(0,0,0);
+			}
+			div.content-box div {
+				width: 66%;
+				float: right;
+				padding-left: 20px;
+			}
+			label {
+				display: block;
+				font-size: 130%;
+				font-weight: 500;
+			}
+			.button {
+  				border: none;
+	  			color: white;
+  				padding: 15px 32px;
+  				text-align: center;
+  				text-decoration: none;
+	  			display: inline-block;
+  				font-size: 18px;
+  				margin: 4px 2px;
+  				cursor: pointer;
+				background-color: rgb(0,146,106);
+			}
+			.button:hover {
+				background-color: rgb(0,110,80);
+			}
+			@media screen and (max-width: 1050px) {
+				div.content-box img {
+					width: 45%;
+					float: left;
+				}
+				div.content-box div {
+					width: 52%;
+					float: right;
+					padding-left: 20px;
+				}
+			}
+			@media screen and (max-width: 900px) {
+				div.content-box {
+					display: block;
+				}
+				div.content-box img {
+					display: block;
+					width: 100%;
+					margin-bottom: 40px;
+				}
+				div.content-box div {
+					display: block;
+					width: 100%;
+					padding-left: 0;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				div.content-box {
+					padding: 2vh;
+				}
+			}
+			#Filter {
+				text-align: justify;
+			}
+			#FilterMenuBtn {
+				background-color: rgb(3,46,87);
+				border: none;
+				border-radius: 5px;
+				padding: 5px;
+				cursor: pointer;
+				margin-bottom: 20px;
+			}
+			#FilterMenuBtn:hover {
+				background-color: rgb(0,0,0);
+			}
+			#Filter>.btn {
+				margin: 5px 0 5px 0;
+			}
+			#Filter>.btn.active {
+				background-color: rgb(0,0,0);
+				color: rgb(255,255,255);
+			}
+		</style>
+	</head>
+
+
+		<body>
+			<div class="sidebar">
+				<div class="logo-details">
+					<img src="images/Exotika.png" id="logo-img" alt="Exotika"/>
+					<a id="logo-name" href="index.html" target="_blank">Exotika</a>
+				</div>
+				<br>
+				<ul class="nav-links">
+					<li><a href="ResortOwnerDashboard.html"><i class='bx bx-grid-alt' ></i><span class="links_name">Statistics</span></a></li>
+					<li><a href="ResortOwnerDashboard_Details.html"><i class='bx bxs-contact' ></i><span class="links_name">Resort Details</span></a></li>
+					<li><a href="ResortOwnerDashboard_Contracts.html" class="active"><i class='bx bxs-data' ></i><span class="links_name">Ongoing Contracts</span></a></li>
+					<li><a href="ResortOwnerDashboard_Employees.html"><i class='bx bx-cart-alt' ></i><span class="links_name">Empoyee Logistics</span></a></li>
+					<li><a href="ResortOwnerDashboard_Packages.html"><i class='bx bx-paint' ></i><span class="links_name">Packages Available</span></a></li>
+					<li><a href="ResortOwnerDashboard_Feedbacks.html"><i class='bx bx-message' ></i><span class="links_name">Feedbacks</span></a></li>
+					<li class="log_out"><a href="SignIn.html"><i class='bx bx-log-out'></i><span class="links_name">Log out</span></a></li>
+				</ul>
+			</div>
+
+			<section class="registrations">
+				<nav>
+					<div class="sidebar-button">
+						<i class='bx bx-menu sidebarBtn'></i>
+						<span class="dashboard">Dashboard</span>
+					</div>
+					<div class="profile-details">
+						<img src="https://img.icons8.com/bubbles/500/000000/user.png"/>
+						<span class="name">Resort Name</span>
+					</div>
+				</nav>
+
+
+
+				<section id="Details">
+					<h1>Vendor Contracts</h1><br><br>
+
+					<button id="FilterMenuBtn" onclick="FilterMenu()"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M86,24.08c-6.36937,0 -11.7175,4.42094 -13.26281,10.32h-62.41719c-1.23625,-0.01344 -2.39187,0.63156 -3.02344,1.70656c-0.61813,1.075 -0.61813,2.39187 0,3.46687c0.63156,1.075 1.78719,1.72 3.02344,1.70656h62.41719c1.54531,5.89906 6.89344,10.32 13.26281,10.32c6.36938,0 11.7175,-4.42094 13.26281,-10.32h62.41719c1.23625,0.01344 2.39188,-0.63156 3.02344,-1.70656c0.61813,-1.075 0.61813,-2.39187 0,-3.46687c-0.63156,-1.075 -1.78719,-1.72 -3.02344,-1.70656h-62.41719c-1.54531,-5.89906 -6.89344,-10.32 -13.26281,-10.32zM86,30.96c3.73563,0 6.67844,2.87563 6.83969,6.57094c-0.01344,0.20156 -0.01344,0.41656 0,0.63156c-0.16125,3.68188 -3.10406,6.5575 -6.83969,6.5575c-3.73562,0 -6.67844,-2.87562 -6.83969,-6.57094c0.01344,-0.20156 0.01344,-0.41656 0,-0.63156c0.16125,-3.68187 3.10406,-6.5575 6.83969,-6.5575zM134.16,72.24c-6.36937,0 -11.7175,4.42094 -13.26281,10.32h-110.57719c-1.23625,-0.01344 -2.39187,0.63156 -3.02344,1.70656c-0.61813,1.075 -0.61813,2.39187 0,3.46687c0.63156,1.075 1.78719,1.72 3.02344,1.70656h110.57719c1.54531,5.89906 6.89344,10.32 13.26281,10.32c6.36938,0 11.7175,-4.42094 13.26281,-10.32h14.25719c1.23625,0.01344 2.39188,-0.63156 3.02344,-1.70656c0.61813,-1.075 0.61813,-2.39187 0,-3.46687c-0.63156,-1.075 -1.78719,-1.72 -3.02344,-1.70656h-14.25719c-1.54531,-5.89906 -6.89344,-10.32 -13.26281,-10.32zM134.16,79.12c3.73563,0 6.67844,2.87563 6.83969,6.57094c-0.01344,0.20156 -0.01344,0.41656 0,0.63156c-0.16125,3.68188 -3.10406,6.5575 -6.83969,6.5575c-3.73562,0 -6.67844,-2.87562 -6.83969,-6.57094c0.01344,-0.20156 0.01344,-0.41656 0,-0.63156c0.16125,-3.68187 3.10406,-6.5575 6.83969,-6.5575zM48.16,120.4c-6.36937,0 -11.7175,4.42094 -13.26281,10.32h-24.57719c-1.23625,-0.01344 -2.39187,0.63156 -3.02344,1.70656c-0.61813,1.075 -0.61813,2.39187 0,3.46687c0.63156,1.075 1.78719,1.72 3.02344,1.70656h24.57719c1.54531,5.89906 6.89344,10.32 13.26281,10.32c6.36938,0 11.7175,-4.42094 13.26281,-10.32h100.25719c1.23625,0.01344 2.39188,-0.63156 3.02344,-1.70656c0.61813,-1.075 0.61813,-2.39187 0,-3.46687c-0.63156,-1.075 -1.78719,-1.72 -3.02344,-1.70656h-100.25719c-1.54531,-5.89906 -6.89344,-10.32 -13.26281,-10.32zM48.16,127.28c3.73563,0 6.67844,2.87563 6.83969,6.57094c-0.01344,0.20156 -0.01344,0.41656 0,0.63156c-0.16125,3.68188 -3.10406,6.5575 -6.83969,6.5575c-3.73562,0 -6.67844,-2.87562 -6.83969,-6.57094c0.01344,-0.20156 0.01344,-0.41656 0,-0.63156c0.16125,-3.68187 3.10406,-6.5575 6.83969,-6.5575z"></path></g></g></svg></button>
+					<div id="Filter" style="display:none;">
+						<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+						<button class="btn" onclick="filterSelection('Products')">Products</button>
+						<button class="btn" onclick="filterSelection('Services')">Services</button>
+						<button class="btn" onclick="filterSelection('Stationary')">Stationary</button>
+						<button class="btn" onclick="filterSelection('Cutlery')">Cutlery</button>
+						<button class="btn" onclick="filterSelection('Toiletry')">Toiletry</button>
+						<button class="btn" onclick="filterSelection('Electricians')">Electricians</button>
+						<button class="btn" onclick="filterSelection('Plumbers')">Plumbers</button>
+						<button class="btn" onclick="filterSelection('Caterers')">Caterers</button>
+						<button class="btn" onclick="filterSelection('EventManagers')">Event Managers</button>
+						<button class="btn" onclick="filterSelection('Plumbers')">Plumbers</button>
+					</div>
+
+
+					<div class="products stationary content-box">
+						<img src="Images/stationery.jpg"/>
+						<div class="content">
+							<h2>Ganpat Stationaries</h2><br>
+							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
+							<h3>Phone: 9685040007</h3>
+							<h3>Email: gm@ganpatstationaries.in</h3><br>
+							<p>In effect from January 15, 2021 to March 15, 2021</p>
+							<a href="" class="button">Request Contract Extension</a>
+						</div>
+					</div>
+					<div class="products cutlery content-box">
+						<img src="Images/cutlery.jpg"/>
+						<div class="content">
+							<h2>Mukesh Cutleries</h2><br>
+							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
+							<h3>Phone: 9685040007</h3>
+							<h3>Email: gm@mukeshcutleries.in</h3><br>
+							<p>In effect from March 30, 2021 to April 30, 2021</p>
+							<a href="" class="button">Request Contract Extension</a>
+						</div>
+					</div>
+					<div class="services eventMgmt content-box">
+						<img src="Images/CrescentResort.jpg"/>
+						<div class="content">
+							<h2>Memoir Event Managers</h2><br>
+							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
+							<h3>Phone: 9685040007</h3>
+							<h3>Email: gm@memoir.in</h3><br>
+							<p>In effect from January 15, 2021 to January 15, 2022</p>
+							<a href="" class="button">Request Contract Extension</a>
+						</div>
+					</div>
+				</section>
+				<section id="EditDetails">
+					<div class="modal">
+						<div class="modal-header">
+							<h1 class="modal-title">Edit Resort Details</h1>
+						</div>
+						<div class="modal-body">
+							<form method="post">
+								<label for="EditResortName">Name of the Resort: </label>
+								<input name="ResortName" id="EditResortName" placeholder="New Resort Name"/>
+								<br><br>
+								<label for="EditResortAddress">Address of the Resort: </label>
+								<input name="ResortAddress" id="EditResortAddress" placeholder="New Resort Address"/>
+								<br><br>
+								<label for="EditResortPhNo">Contact Number of the Resort: </label>
+								<input name="ResortPhNo" id="EditResortPhNo" placeholder="New Resort Contact Number"/>
+								<br><br>
+								<input type="submit" value="Update Details" onclick="AdminCredentialCheck()"/>
+								<input type="reset" value="Reset Fields"/>
+								<button class='btn' onclick="DetailEditing()">Cancel</button>
+							</form>
+						</div>
+					</div>
+				</section>
+			</div>
+
+		</section>
+
+
+
+
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+			var a;
+			function FilterMenu()
+				{
+					if (a==1)
+						{
+							document.getElementById("Filter").style.display="none";
+							return a=0;
+						}
+					else
+						{
+							document.getElementById("Filter").style.display="inline-block";
+							return a=1;
+						}
+				}			
+		</script>
+		<script>
+			var a;
+			function DetailEditing()
+				{
+					if (a==1)
+						{
+							document.getElementById("Details").setAttribute('class', null);
+							document.getElementById("EditDetails").style.display="none";
+							return a=0;
+						}
+					else
+						{
+							document.getElementById("Details").setAttribute('class', 'BlurBg');
+							document.getElementById("EditDetails").style.display="inline-block";
+							return a=1;
+						}
+				}
+		</script>
+		<script>
+			filterSelection("all")
+			function filterSelection(c) {
+				var x, i;
+				x = document.getElementsByClassName("content-box");
+				if (c == "all") c = "";
+					// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+					for (i = 0; i < x.length; i++) {
+						RemoveClass(x[i], "show");
+						if (x[i].className.indexOf(c) > -1)
+							AddClass(x[i], "show");
+					}
+				}
+
+			// Show filtered elements
+			function AddClass(element, name) {
+				var i, arr1, arr2;
+				arr1 = element.className.split(" ");
+				arr2 = name.split(" ");
+				for (i = 0; i < arr2.length; i++) {
+					if (arr1.indexOf(arr2[i]) == -1) {
+						element.className += " " + arr2[i];
+					}
+				}
+			}
+
+			// Hide elements that are not selected
+			function RemoveClass(element, name) {
+				var i, arr1, arr2;
+				arr1 = element.className.split(" ");
+				arr2 = name.split(" ");
+				for (i = 0; i < arr2.length; i++) {
+					while (arr1.indexOf(arr2[i]) > -1) {
+						arr1.splice(arr1.indexOf(arr2[i]), 1);
+					}
+				}
+				element.className = arr1.join(" ");
+			}
+
+			// Add active class to the current control button (highlight it)
+			var btnContainer = document.getElementById("Filter");
+			var btns = btnContainer.getElementsByClassName("btn");
+			for (var i = 0; i < btns.length; i++) {
+				btns[i].addEventListener("click", function() {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+			});
+		}
+	</script>
+
+</body>
+</html>
+
