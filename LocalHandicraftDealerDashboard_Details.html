@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Handicraft Dealer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="Images/Logo.png" type="image/png">
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="CSS/DashboardCSS.css">
+		<style>
+			.BlurBg {
+				filter: blur(5px);
+			}
+			#Details, #EditDetails {
+				margin: 20vh auto;
+				padding: 5vh 10vh;
+				width: 85%;
+				background: rgb(255,255,255);
+				border: 2px solid rgb(0,0,0);
+				border-radius: 10px;
+				text-align: justify;
+			}
+			#Details p {
+				margin-top: 2.5vh;
+				padding: 2vh;
+				border: 2px solid rgb(0,0,0);
+				border-radius: 10px;
+				font-size: 110%;
+				background: rgba(0,0,0, 0.1);
+			}
+			#Details img {
+				width: 48%;
+				border-radius: 5px;
+				border: 2px solid rgb(0,0,0);
+			}
+			#EditDetails {
+				position: absolute;
+				top: 0;
+				margin-left: 6vw;
+				display: none;
+			}
+			#EditDetails label {
+				float: left;
+				margin-top: 5vh;
+			}
+			.btn, #EditDetails input, #EditDetails textarea {
+				margin-top: 2.5vh;
+				width: 95%;
+				margin-left: 5%;
+				padding: 2vh;
+				border: 2px solid rgb(0,0,0);
+				border-radius: 10px;
+				font-size: 110%;
+			}
+			#EditDetails textarea {
+				resize: vertical;
+			}
+			.btn, #EditDetails input[type=submit], #EditDetails input[type=reset] {
+				width: auto;
+				margin-left: 0;
+				margin-top: 5%;
+				cursor: pointer;
+				transition-duration: 0.5s;
+				margin-right: 20px;
+			}
+			.btn:hover, #EditDetails input[type=submit]:hover, #EditDetails input[type=reset]:hover {
+				background-color: rgb(0,146,106);
+				color: rgb(255,255,255);
+			}
+		</style>		
+	</head>
+
+
+	<body>
+		<div class="sidebar">
+			<div class="logo-details">
+				<img src="images/Exotika.png" id="logo-img" alt="Exotika"/>
+				<a id="logo-name" href="index.html" target="_blank">Exotika</a>
+			</div>
+			<br>
+			<ul class="nav-links">
+				<li><a href="LocalHandicraftDealerDashboard.html"><i class='bx bx-grid-alt' ></i><span class="links_name">Statistics</span></a></li>
+				<li><a href="LocalHandicraftDealerDashboard_Details.html" class="active"><i class='bx bxs-contact' ></i><span class="links_name">Business Details</span></a></li>
+				<li><a href="LocalHandicraftDealerDashboard_Products.html"><i class='bx bx-paint' ></i><span class="links_name">Products Available</span></a></li>
+				<li><a href="LocalHandicraftDealerDashboard_Feedbacks.html"><i class='bx bx-message' ></i><span class="links_name">Feedbacks</span></a></li>
+				<li class="log_out"><a href="SignIn.html"><i class='bx bx-log-out'></i><span class="links_name">Log out</span></a></li>
+			</ul>
+		</div>
+
+		<section class="registrations">
+			<nav>
+				<div class="sidebar-button">
+					<i class='bx bx-menu sidebarBtn'></i>
+					<span class="dashboard">Dashboard</span>
+				</div>
+				<div class="profile-details">
+					<img src="images/Logo.png" alt="">
+					<span class="name">Handicraft Dealer</span>
+				</div>
+			</nav>
+
+
+			
+			<section id="Details">
+				<h1>Business Details</h1><br><br>
+				<label for="BusinessName">Name of the Business: </label>
+				<p>Unique Art and Craft</p>
+				<br><br>
+				<label for="BusinessAddress">Address of the Business: </label>
+				<p>2, Hasanvadi Opp. Shain Atami Guest House, Radhe Krushn Apartment, Baroda-360002</p>
+				<br><br>
+				<label for="BusinessPhNo">Contact Number of the Business: </label>
+				<p>9234567992</p>
+				<br><br>
+				<label for="BusinessEMail">Email Address of the Business: </label>
+				<p>Unique.Art@gmail.com</p>
+				<br><br>
+				<label for="BusinessSummary">About the Business: </label>
+				<p>We’re proud to be India’s biggest retailer for art and craft supplies with more than 10000 products in our retail stores and online store. Since our inception, we’ve been trying to make more inspirational & affordable products.We’re so happy to be known as a “value store” by our customers today! We are always on our toes, adding new products and creating trends for you to explore! We don’t want any creative need of yours to go unfulfilled and so we also import products from leading brands around the world.</p>
+				<br><br>
+				<img src="Images/CrescentResort.jpg"/>
+				<img src="Images/GlobalResort.jpg"/>
+				<button class='btn' onclick="DetailEditing()" style="margin-top:20px;">Edit Details</button>
+			</section>
+
+
+			<section id="EditDetails">
+				<div class="modal">
+					<div class="modal-header">
+						<h1 class="modal-title">Edit Resort Details</h1><br><br>
+						<p>Enter the details to be updated:-</p>
+					</div>
+					<div class="modal-body">
+						<form method="post">
+							<label for="EditBusinessName">Name of the Business: </label>
+							<input name="BusinessName" id="EditBusinessName" placeholder="New Business Name"/>
+							<br><br>
+							<label for="EditBusinessAddress">Address of the Business: </label>
+							<textarea name="BusinessAddress" id="EditBusinessAddress" placeholder="New Business Address"></textarea>
+							<br><br>
+							<label for="EditBusinessPhNo">Contact Number of the Business: </label>
+							<input name="BusinessPhNo" id="EditBusinessPhNo" placeholder="New Business Contact Number"/>
+							<br><br>
+							<label for="EditBusinessEMail">E-Mail ID of the Business: </label>
+							<input name="BusinessEMail" id="EditBusinessEMail" placeholder="New Business E-Mail ID"/>
+							<br><br>
+							<label for="EditBusinessSummary">About the Business: </label>
+							<textarea name="BusinessSummary" id="BusinessSummart" placeholder="New Business Summary"></textarea>
+							<br><br>
+							<label for="BusinessImg">Update Business Images: </label>
+							<input type="file" id="BusinessImg"  accept="image/*" multiple/>
+							<br><br>
+							<input type="submit" value="Update Details" onclick="AdminCredentialCheck()"/>
+							<input type="reset" value="Reset Fields"/>
+							<button class='btn' onclick="DetailEditing()">Cancel</button>
+						</form>
+					</div>
+				</div>
+			</section>
+	</section>
+
+
+
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="JS/Dashboard.js"></script>
+	<script>
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".sidebarBtn");
+		sidebarBtn.onclick = function() {
+			sidebar.classList.toggle("active");
+			if(sidebar.classList.contains("active")){
+				sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+				document.getElementById("logo-img").style.width = "75%";
+				document.getElementById("logo-name").style.display = "none";
+				document.getElementById("logo-img").style.margin = "0 0 0 0.5vw";
+			}
+			else {
+				sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+				document.getElementById("logo-img").style.width = "25%";
+				document.getElementById("logo-name").style.display = "inline-block";
+				document.getElementById("logo-img").style.margin = "0 2vw 0 1vw";
+			}
+		}
+	</script>
+	<script>
+		var a;
+		function DetailEditing()
+			{
+				if (a==1)
+					{
+						document.getElementById("Details").setAttribute('class', null);
+						document.getElementById("EditDetails").style.display="none";
+						return a=0;
+					}
+				else
+					{
+						document.getElementById("Details").setAttribute('class', 'BlurBg');
+						document.getElementById("EditDetails").style.display="inline-block";
+						return a=1;
+					}
+			}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Resort Owner  </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="Images/Logo.png" type="image/png">
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="CSS/DashboardCSS.css">
+		<link rel="stylesheet" type="text/css" href="C:\xampp\htdocs\internship\exotika.github.io-main\web/css/style.css" />
+		<style>
+			.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#booking {
+	font-family: 'Cabin', sans-serif;
+	background-color: #f7f9fa;
+}
+
+.booking-form {
+	position: relative;
+	max-width: 900px;
+	width: 100%;
+	margin: auto;
+	background: #fff;
+	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.booking-form>.booking-bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 250px;
+	background-image: url(https://cache.marriott.com/marriottassets/marriott/MAASC/maasc-infinity-pool-5431-hor-feat.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.booking-form>form {
+	margin-left: 250px;
+	padding: 30px;
+	border: 1px solid #f9fafc;
+	border-left: 0px;
+}
+
+.booking-form .form-header {
+	margin-bottom: 30px;
+}
+
+.booking-form .form-header h2 {
+	margin: 0;
+	margin-bottom: 0px;
+	font-weight: 700;
+	color: #122244;
+	font-size: 35px;
+	text-transform: capitalize;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+	background-color: #f7f9fa;
+	height: 40px;
+	padding: 0px 10px;
+	border-radius: 0px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	color: #122244;
+	border: 0px;
+	font-size: 16px;
+	font-weight: 700;
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control::placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control:focus {
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+	color: #dde3e8;
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #dddee9;
+	font-size: 14px;
+}
+
+.booking-form .form-label {
+	color: #b5c1cc;
+	font-weight: 700;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 14px;
+	z-index: 1;
+}
+
+.booking-form .form-btn {
+	margin-top: 10px;
+}
+
+.booking-form .submit-btn {
+	color: #fff;
+	background-color: #6499ff;
+	font-weight: 700;
+	padding: 13px 35px;
+	font-size: 16px;
+	border: none;
+	width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+	.booking-form>.booking-bg {
+		display: none;
+	}
+	.booking-form>form {
+		margin-left: 0px;
+	}
+}
+		</style>
+		
+	</head>
+
+
+	<body>
+		<div class="sidebar">
+			<div class="logo-details">
+				<img src="images/Exotika.png" id="logo-img" alt="Exotika"/>
+				<a id="logo-name" href="index.html" target="_blank">Exotika</a>
+			</div>
+			<ul class="nav-links">
+				<br><li><a href="resort_personal_details.html"><i class='bx bx-building-house' ></i><span class="links_name">Personal Details</span></a></li>
+				
+				<li><a href="rooms.html"><i class='bx bx-building-house' ></i><span class="links_name">Rooms</span></a></li>
+				
+				<li><a href="booking_history.html"><i class='bx bx-building-house' ></i><span class="links_name">Booking History</span></a></li>
+				<li><a href="#"><i class='bx bx-building-house' ></i><span class="links_name">Offers</span></a></li>
+				<li><a href="#"><i class='bx bx-building-house' ></i><span class="links_name">Product Requirement</span></a></li>
+				
+				<li><a href="#"><i class='bx bx-building-house' ></i><span class="links_name">Logout</span></a></li>
+				
+				</ul>
+		</div>
+
+		<section class="registrations">
+			<nav>
+				<div class="sidebar-button">
+					<i class='bx bx-menu sidebarBtn'></i>
+					<span class="dashboard">Dashboard</span>
+				</div>
+				<div class="profile-details">
+					<img src="images/Logo.png" alt="">
+					<span class="name"> Resort Owner </span>
+				</div>
+			</nav>
+
+			<div class="registrationGlance" >
+			
+                <div id="booking" class="section">
+                    <div class="section-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="booking-form">
+                                    <div class="booking-bg"></div>
+                                    <form>
+                                        <div class="form-header">
+                                            <h2>Make your reservation</h2>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Check In</span>
+                                                    <input class="form-control" type="date" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Check Out</span>
+                                                    <input class="form-control" type="date" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Adults</span>
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                    </select>
+                                                    <span class="select-arrow"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Children</span>
+                                                    <select class="form-control">
+                                                        <option>0</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                    <span class="select-arrow"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="form-label">Email</span>
+                                            <input class="form-control" type="email" placeholder="Enter your email">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="form-label">Phone</span>
+                                            <input class="form-control" type="tel" placeholder="Enter your phone number">
+                                        </div>
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Book Now</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			
+
+
+				<div id="StatChart"></div>
+	
+
+	</section>
+
+
+
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="JS/Dashboard.js"></script>
+	<script>
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".sidebarBtn");
+		sidebarBtn.onclick = function() {
+			sidebar.classList.toggle("active");
+			if(sidebar.classList.contains("active")){
+				sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+				document.getElementById("logo-img").style.width = "75%";
+				document.getElementById("logo-name").style.display = "none";
+				document.getElementById("logo-img").style.margin = "0 0 0 0.5vw";
+			}
+			else {
+				sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+				document.getElementById("logo-img").style.width = "25%";
+				document.getElementById("logo-name").style.display = "inline-block";
+				document.getElementById("logo-img").style.margin = "0 2vw 0 1vw";
+			}
+		}
+	</script>
+
+</body>
+</html>

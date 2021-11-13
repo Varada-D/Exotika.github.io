@@ -3,12 +3,13 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>User Dashboard | Exotika</title>
+		<title>Tourist Dashboard | Exotika</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="Images/Logo.png" type="image/png">
 		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="CSS/Style.css">
 		<link rel="stylesheet" href="CSS/DashboardCSS.css">
+		<link rel="stylesheet" href="CSS/feedback.css">
 		<style>
 			.BlurBg {
 				filter: blur(5px);
@@ -29,17 +30,17 @@
 			#Details p {
 				font-size: 110%;
 			}
-			#EditDetails {
+			#Feedback {
 				position: absolute;
 				top: 0;
 				margin-left: 6vw;
 				display: none;
 			}
-			#EditDetails label {
+			#Feedback label {
 				float: left;
 				margin-top: 5vh;
 			}
-			.btn, #EditDetails input {
+			.btn, #Feedback input, textarea {
 				margin-top: 2.5vh;
 				width: 95%;
 				margin-left: 5%;
@@ -48,7 +49,7 @@
 				border-radius: 10px;
 				font-size: 110%;
 			}
-			.btn, #EditDetails input[type=submit], #EditDetails input[type=reset] {
+			.btn, #Feedback input[type=submit], #Feedback input[type=reset] {
 				width: auto;
 				margin-left: 0;
 				margin-top: 5%;
@@ -56,7 +57,7 @@
 				transition-duration: 0.5s;
 				margin-right: 20px;
 			}
-			.btn:hover, #EditDetails input[type=submit]:hover, #EditDetails input[type=reset]:hover {
+			.btn:hover, #Feedback input[type=submit]:hover, #Feedback input[type=reset]:hover {
 				background-color: rgb(0,146,106);
 				color: rgb(255,255,255);
 			}
@@ -133,27 +134,50 @@
 					padding: 2vh;
 				}
 			}
-			#Filter {
-				text-align: justify;
+			textarea {
+				resize: vertical;
 			}
-			#FilterMenuBtn {
-				background-color: rgb(3,46,87);
-				border: none;
-				border-radius: 5px;
-				padding: 5px;
-				cursor: pointer;
-				margin-bottom: 20px;
-			}
-			#FilterMenuBtn:hover {
-				background-color: rgb(0,0,0);
-			}
-			#Filter>.btn {
-				margin: 5px 0 5px 0;
-			}
-			#Filter>.btn.active {
-				background-color: rgb(0,0,0);
-				color: rgb(255,255,255);
-			}
+			<!-- star rating css -->
+			.rate {
+					display:flex;
+					flex:1
+					align-items:center;
+					justify-content:flex-start;
+					height: 46px;
+				}
+				.rate:not(:checked) > input {
+					position:absolute;
+					top:-9999px;
+				}
+				.rate:not(:checked) > label {
+					float: right;
+					width:1em;
+					overflow:hidden;
+					white-space:nowrap;
+					cursor:pointer;
+					font-size:80px;
+					color:#ccc;
+				}
+				.rate:not(:checked) > label:before {
+					content: '★ ';
+				}
+				.rate > input:checked ~ label {
+					color: #ffc700;    
+				}
+				.rate:not(:checked) > label:hover,
+				.rate:not(:checked) > label:hover ~ label {
+					color: #deb217;  
+				}
+				.rate > input:checked + label:hover,
+				.rate > input:checked + label:hover ~ label,
+				.rate > input:checked ~ label:hover,
+				.rate > input:checked ~ label:hover ~ label,
+				.rate > label:hover ~ input:checked ~ label {
+					color: #c59b08;
+					align:left;
+					
+				}
+				 <!-- end -->
 		</style>
 	</head>
 
@@ -162,15 +186,13 @@
 			<div class="sidebar">
 				<div class="logo-details">
 					<img src="images/Exotika.png" id="logo-img" alt="Exotika"/>
-					<a id="logo-name" href="index.html" target="_blank">Exotika</a>
+					<a id="logo-name" href="tourist_dashboard.html" target="_blank">Exotika</a>
 				</div>
 				<br>
 				<ul class="nav-links">
-					<li><a href="VendorDashboard.html"><i class='bx bx-grid-alt' ></i><span class="links_name">Statistics</span></a></li>
-					<li><a href="VendorDashboard_Details.html"><i class='bx bxs-contact' ></i><span class="links_name">Business Details</span></a></li>
-					<li><a href="VendorDashboard_Contracts.html" class="active"><i class='bx bxs-data' ></i><span class="links_name">Ongoing Contracts</span></a></li>
-					<li><a href="VendorDashboard_Products.html"><i class='bx bx-paint' ></i><span class="links_name">Products Available</span></a></li>
-					<li><a href="VendorDashboard_Feedbacks.html"><i class='bx bx-message' ></i><span class="links_name">Feedbacks</span></a></li>
+					<li><a href="TouristDashboard.html"><i class='bx bxs-contact'></i><span class="links_name">Tourist  Details</span></a></li>
+					<li><a href="TouristDashboard_BookingHistory.html" class="active"><i class='bx bxs-data' ></i><span class="links_name">Booking History</span></a></li>
+					<li><a href="TouristDashboard_Feedback.html"><i class='bx bx-message' ></i><span class="links_name">Feedbacks</span></a></li>
 					<li class="log_out"><a href="SignIn.html"><i class='bx bx-log-out'></i><span class="links_name">Log out</span></a></li>
 				</ul>
 			</div>
@@ -183,72 +205,85 @@
 					</div>
 					<div class="profile-details">
 						<img src="https://img.icons8.com/bubbles/500/000000/user.png"/>
-						<span class="name">Business Name</span>
+						<span class="name">Ranvijay Singha</span>
 					</div>
 				</nav>
 
 
 
 				<section id="Details">
-					<h1>Vendor Contracts</h1><br><br>
+					<h1>Booking History</h1><br><br>
 
-					<div class="products stationary content-box">
-						<img src="Images/stationery.jpg"/>
+					
+
+					<div class="content-box">
+						<img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
 						<div class="content">
 							<h2>Crescent Resort</h2><br>
 							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
 							<h3>Phone: 9685040007</h3>
-							<h3>Email: gm@ganpatstationaries.in</h3><br>
-							<p>In effect from January 15, 2021 to March 15, 2021</p>
-							<a href="" class="button">Request Contract Extension</a>
+							<h3>Email: gm@crescentresort.in</h3><br>
+							<p> From January 15, 2021 to March 15, 2021</p>
+							<button class="btn" onclick="GiveFeedback()">Give Feedback</button>
 						</div>
 					</div>
-					<div class="products cutlery content-box">
-						<img src="Images/cutlery.jpg"/>
+					<div class="content-box">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbks9VeyIOkXG7InDptbgqZDNlZZ1yaFeYIE0YpxshC42TEUkdcFz4Ckv-KKK_2h9o5A&usqp=CAU"/>
 						<div class="content">
-							<h2>Crescent Resort</h2><br>
+							<h2>Global Resort</h2><br>
 							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
 							<h3>Phone: 9685040007</h3>
-							<h3>Email: gm@mukeshcutleries.in</h3><br>
-							<p>In effect from March 30, 2021 to April 30, 2021</p>
-							<a href="" class="button">Request Contract Extension</a>
+							<h3>Email: gm@globalresort.in</h3><br>
+							<p>From March 30, 2021 to April 30, 2021</p>
+							<button class="btn" onclick="GiveFeedback()">Give Feedback</button>
 						</div>
 					</div>
-					<div class="services eventMgmt content-box">
-						<img src="Images/CrescentResort.jpg"/>
+					<div class="content-box">
+						<img src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Hotel_w_930_h_550_c_fill_g_auto_q_40_f_jpg/v1442932080/Domestic%20Hotels/Hotels_HALOL/Mount%20Heritage%20Resort/Overview.jpg"/>
 						<div class="content">
-							<h2>Indiana Inn</h2><br>
+							<h2>Taj Resorts</h2><br>
 							<p>New, Sehore Bypass Rd, Sehore, Madhya Pradesh 466001, Sehore, India</p>
 							<h3>Phone: 9685040007</h3>
-							<h3>Email: gm@memoir.in</h3><br>
-							<p>In effect from January 15, 2021 to January 15, 2022</p>
-							<a href="" class="button">Request Contract Extension</a>
+							<h3>Email: gm@tajresorts.in</h3><br>
+							<p>From January 15, 2021 to January 15, 2022</p>
+							<button class="btn" onclick="GiveFeedback()">Give Feedback</button>
 						</div>
 					</div>
 				</section>
-				<section id="EditDetails">
+				<section id="Feedback">
 					<div class="modal">
-						<div class="modal-header">
-							<h1 class="modal-title">Edit Resort Details</h1>
-						</div>
+						
 						<div class="modal-body">
 							<form method="post">
-								<label for="EditResortName">Name of the Resort: </label>
-								<input name="ResortName" id="EditResortName" placeholder="New Resort Name"/>
-								<br><br>
-								<label for="EditResortAddress">Address of the Resort: </label>
-								<input name="ResortAddress" id="EditResortAddress" placeholder="New Resort Address"/>
-								<br><br>
-								<label for="EditResortPhNo">Contact Number of the Resort: </label>
-								<input name="ResortPhNo" id="EditResortPhNo" placeholder="New Resort Contact Number"/>
-								<br><br>
-								<input type="submit" value="Update Details" onclick="AdminCredentialCheck()"/>
+							<h1>Feedback</h1><br><br>
+								<label for="tourist_name">Name: </label>
+								<input name="tourist_name" id="tourist_name" placeholder="Name"/>
+								<br><br><br>
+								<label for="tourist_feedback">Feedback: </label>
+								<textarea  id="tourist_feedback" placeholder="Feedback"></textarea>
+								<br><br><br>
+								<label for="rating">Overall Rating: </label>
+								<div class="rate" style="width: 75%"  >
+									<input type="radio" id="star5" name="rate" value="5" />
+									<label for="star5" title="text">5 star</label>
+									<input type="radio" id="star4" name="rate" value="4" />
+									<label for="star4" title="text">4 star</label>
+									<input type="radio" id="star3" name="rate" value="3" />
+									<label for="star3" title="text">3 star</label>
+									<input type="radio" id="star2" name="rate" value="2" />
+									<label for="star2" title="text">2 star</label>
+									<input type="radio" id="star1" name="rate" value="1" />
+									<label for="star1" title="text">1 star</label>
+								</div>														
+								
+								<input type="submit" value="Send" onclick="AdminCredentialCheck()"/>
 								<input type="reset" value="Reset Fields"/>
 								<button class='btn' onclick="DetailEditing()">Cancel</button>
 							</form>
 						</div>
 					</div>
 				</section>
+				
 			</div>
 
 		</section>
@@ -275,73 +310,22 @@
 		</script>
 		<script>
 			var a;
-			function DetailEditing()
+			function GiveFeedback()
 				{
 					if (a==1)
 						{
 							document.getElementById("Details").setAttribute('class', null);
-							document.getElementById("EditDetails").style.display="none";
+							document.getElementById("Feedback").style.display="none";
 							return a=0;
 						}
 					else
 						{
 							document.getElementById("Details").setAttribute('class', 'BlurBg');
-							document.getElementById("EditDetails").style.display="inline-block";
+							document.getElementById("Feedback").style.display="inline-block";
 							return a=1;
 						}
 				}
 		</script>
-		<script>
-			filterSelection("all")
-			function filterSelection(c) {
-				var x, i;
-				x = document.getElementsByClassName("content-box");
-				if (c == "all") c = "";
-					// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-					for (i = 0; i < x.length; i++) {
-						RemoveClass(x[i], "show");
-						if (x[i].className.indexOf(c) > -1)
-							AddClass(x[i], "show");
-					}
-				}
-
-			// Show filtered elements
-			function AddClass(element, name) {
-				var i, arr1, arr2;
-				arr1 = element.className.split(" ");
-				arr2 = name.split(" ");
-				for (i = 0; i < arr2.length; i++) {
-					if (arr1.indexOf(arr2[i]) == -1) {
-						element.className += " " + arr2[i];
-					}
-				}
-			}
-
-			// Hide elements that are not selected
-			function RemoveClass(element, name) {
-				var i, arr1, arr2;
-				arr1 = element.className.split(" ");
-				arr2 = name.split(" ");
-				for (i = 0; i < arr2.length; i++) {
-					while (arr1.indexOf(arr2[i]) > -1) {
-						arr1.splice(arr1.indexOf(arr2[i]), 1);
-					}
-				}
-				element.className = arr1.join(" ");
-			}
-
-			// Add active class to the current control button (highlight it)
-			var btnContainer = document.getElementById("Filter");
-			var btns = btnContainer.getElementsByClassName("btn");
-			for (var i = 0; i < btns.length; i++) {
-				btns[i].addEventListener("click", function() {
-				var current = document.getElementsByClassName("active");
-				current[0].className = current[0].className.replace(" active", "");
-				this.className += " active";
-			});
-		}
-	</script>
 
 </body>
 </html>
-
