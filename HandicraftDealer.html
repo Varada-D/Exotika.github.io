@@ -8,19 +8,14 @@
 		<link rel="icon" href="Images/Logo.png" type="image/png"> 
 		<link rel="stylesheet" href="CSS/Style.css">
 		<link rel="stylesheet" href="CSS/VisitorPortalCSS.css">
-		<style>
+		<!--<style>
 			.content {
 				background-color: rgb(3,46,87);
 				padding: 10vh;
 				color: rgb(255,255,255);
 			}
-			.content img {
-				float: left;
-				width: 48%;
-			}
+			.content 
 			.content p {
-				float: right;
-				width: 48%;
 			}
 			@media screen and (max-width: 680px) {
 				.content img, .content p {
@@ -29,6 +24,85 @@
 					margin: 2.5vh auto;
 				}
 			}
+		</style>-->
+		<style>
+			main>div {
+				background-color: rgb(3,46,87);
+				color: rgb(255,255,255);
+				padding: 10vh 5vh;
+				border-radius: 12px;
+			}
+			main>div>img {
+				float: left;
+				width: 40%;
+				border-radius: 6px;
+				height: 60vh;
+			}
+			main>div>h1 {
+				margin-bottom: 7.5vh;
+			}
+			main>div>p {
+				line-height: 30px;
+				text-align: justify;
+				float: right;
+				width: 58%;
+				margin-bottom: 2.5vh;
+			}
+			main>div>h2 {
+				margin-top: 7.5vh;
+				margin-bottom: 2.5vh;
+			}
+			main>div>span {
+				font-size: 150%;
+				color: rgb(244,247,118);
+				float: right;
+				width: 58%;
+			}
+			.GoToPortalBtn {
+				margin-left: 60%;
+				float: left;
+			}
+			@media screen and (max-width: 1200px) {
+				main>div>img {
+					clear: both;
+					width: 80%;
+					height: auto;
+					margin-left: 10%;
+					margin-bottom: 5vh;
+				}
+				main>div>p {
+					line-height: 30px;
+					text-align: justify;
+					clear: both;
+					width: 100%;
+					margin-bottom: 2.5vh;
+				}
+				main>div>span {
+					font-size: 150%;
+					color: rgb(244,247,118);
+					clear: both;
+					width: 100%;
+				}
+				.GoToPortalBtn {
+					margin-left: 0;
+					clear: both;
+				}
+			}
+			@media screen and (max-width: 750px) {
+				main>div {
+					padding: 7.5vh 5vh;
+				}
+				main>div>img {
+					width: 100%;
+					margin-left: 0;
+					margin-bottom: 5vh;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				main>div {
+					padding: 5vh 2.5vh;
+				}
+			}				
 		</style>
 	</head>
 
@@ -54,12 +128,15 @@
 
 		<main><br><br><br><br>
 
-			<section id="SearchResults">
-				<div class="content">
-					<img src="https://cdn.shopify.com/s/files/1/0030/9759/1872/products/EL-005-058_A_1024x1024@2x.jpg?v=1599743521"  width="30%" height="30%" >
-					<p>Through the local handicraft dealers portal, a user can list out the region-specific handicrafts they provide, along with their business details, including address and contact information.</p>
-				</div>
-			</section>
+			<div>
+				<img src="Images/handicraft.jfif"  width="30%" height="30%" >
+				<p>Are you a handicraft dealer looking forward to increase the outreach of your beautifully handcrafted products by expanding your presence online? Well... Exotika is exactly what you are looking for!<p>
+				<p>We all know tourists look for some momentos to take away as a memory of their visit, or as a gift to their loved ones. For this purpose, they often turn to the specialities of their place of visit - the local handicrafts.</p>
+				<p>By registering your business with us, you can list out the region-specific handicrafts that you provide, along with your business details like name, address and contact information. This would help the tourists reach out to you in an easy manner, helping expand your outreach and sales. What's more? You get all this for FREE!</p>
+				<p>Through the local handicraft dealers portal, a user can list out the region-specific handicrafts they provide, along with their business details, including address and contact information.</p>
+				<span><b>So what are you waiting for?<b></span><br>
+				<a href="SignIn.html" class="GoToPortalBtn" style="font-size: 150%"><span><b>Register Now!<b></span></a></strong>
+			</div>
 		</main>	
 
 
