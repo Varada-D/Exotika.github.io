@@ -113,25 +113,28 @@
 
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script>
-		var data = google.visualization.arrayToDataTable([
-			['Month', 'Number of Bookings'],
-			['January 2021', 42],
-			['February 2021', 23],
-			['March 2021', 22],
-			['April 2021', 32],
-			['May 2021', 54],
-			['June 2021', 43],
-			['July 2021', 29],
-			['August 2021', 13],
-		]);
-		var chart = new google.visualization.ColumnChart(document.getElementById('StatChart'));
-		var options = {
-			width: 600,
-			height: 400,
-			legend: { position: 'top', maxLines: 3 },
-			bar: { groupWidth: '75%' }
-		};
-		chart.draw(data, options);
+		google.charts.load("current", {packages:['corechart']});
+   		google.charts.setOnLoadCallback(drawChart);
+		function drawChart(){
+			var data = google.visualization.arrayToDataTable([
+				['Month', 'Number of Viewers'],
+				['January 2021', 42],
+				['February 2021', 23],
+				['March 2021', 22],
+				['April 2021', 32],
+				['May 2021', 54],
+				['June 2021', 43],
+				['July 2021', 29],
+				['August 2021', 13],
+			]);
+			var view = new google.visualization.DataView(data);
+			var chart = new google.visualization.ColumnChart(document.getElementById('StatChart'));
+			var options = {
+				legend: { position: 'bottom', maxLines: 3 },
+				bar: { groupWidth: '75%' }
+			};
+			chart.draw(data, options);
+		}
 	</script>
 	<script>
 		let sidebar = document.querySelector(".sidebar");
