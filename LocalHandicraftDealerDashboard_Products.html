@@ -203,6 +203,32 @@
 						</div>
 					</div>
 				</section>
+				<section id="AddProduct">
+					<div class="modal">
+						<div class="modal-header">
+							<h1 class="modal-title">Add Product</h1><br><br>
+							<p>Enter the details to be added:-</p>
+						</div>
+						<div class="modal-body">
+							<form method="post">
+								<label for="NewProductName">Name of the Product: </label>
+								<input name="ProductName" id="NewProductName" placeholder="New Product Name"/>
+								<br><br>
+								<label for="NewProductSummary">Summary of the Product: </label>
+								<input name="ProductSummary" id="NewProductSummary" placeholder="New Product Summary"/>
+								<br><br>
+								<label for="NewProductCost">Cost of the Product Per Unit: </label>
+								<input name="ProductCost" id="NewProductCost" placeholder="New Product Cost (In rupees, Per Unit)"/>
+								<label for="ProductImg">Update Product Images: </label>
+								<input type="file" id="ProductImg"  accept="image/*" multiple/>
+								<br><br>
+								<input type="submit" value="Save Product"/>
+								<input type="reset" value="Reset Fields"/>
+								<button class='btn' onclick="add()">Cancel</button>
+							</form>
+						</div>
+					</div>
+				</section>
 
 	</section>
 
