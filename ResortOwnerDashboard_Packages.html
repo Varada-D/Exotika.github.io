@@ -17,7 +17,7 @@
 			#Packages h1 {
 				margin-bottom: 10vh;
 			}
-			#EditDetails, #AddProduct {
+			#EditDetails, #AddPackage {
 				margin: 20vh auto;
 				padding: 5vh 10vh;
 				width: 85%;
@@ -30,11 +30,11 @@
 				margin-left: 6vw;
 				display: none;
 			}
-			#EditDetails label, #AddProduct label {
+			#EditDetails label, #AddPackage label {
 				float: left;
 				margin-top: 5vh;
 			}
-			.btn, #EditDetails input, #AddProduct input {
+			.btn, #EditDetails input, #AddPackage input {
 				margin-top: 2.5vh;
 				width: 95%;
 				margin-left: 5%;
@@ -43,7 +43,7 @@
 				border-radius: 10px;
 				font-size: 110%;
 			}
-			.btn, #EditDetails input[type=submit], #EditDetails input[type=reset], #AddProduct input[type=submit], #AddProduct input[type=reset] {
+			.btn, #EditDetails input[type=submit], #EditDetails input[type=reset], #AddPackage input[type=submit], #AddPackage input[type=reset] {
 				width: auto;
 				margin-left: 0;
 				margin-top: 5%;
@@ -51,7 +51,7 @@
 				transition-duration: 0.5s;
 				margin-right: 20px;
 			}
-			.btn:hover, #EditDetails input[type=submit]:hover, #EditDetails input[type=reset]:hover, #AddProduct input[type=submit]:hover, #AddProduct input[type=reset]:hover {
+			.btn:hover, #EditDetails input[type=submit]:hover, #EditDetails input[type=reset]:hover, #AddPackage input[type=submit]:hover, #AddPackage input[type=reset]:hover {
 				background-color: rgb(0,146,106);
 				color: rgb(255,255,255);
 			}
@@ -248,6 +248,36 @@
 						</div>
 					</div>
 				</section>
+				<section id="AddPackage">
+					<div class="modal">
+						<div class="modal-header">
+							<h1 class="modal-title">Add New Package</h1><br><br>
+							<p>Enter the details to be updated:-</p>
+						</div>
+						<div class="modal-body">
+							<form method="post">
+								<label for="NewPackageName">Name of the Package: </label>
+								<input name="PackageName" id="NewPackageName" placeholder="New Package Name"/>
+								<br><br>
+								<label for="NewPackageSummary">Summary of the Package: </label>
+								<input name="PackageSummary" id="NewPackageSummary" placeholder="New Package Summary"/>
+								<br><br>
+								<label for="NewPackageCost">Cost of the Package Per Day Per Head: </label>
+								<input name="ResortPackageCost" id="NewResortPackageCost" placeholder="New Package Cost (Per Day Per Head)"/>
+								<br><br>
+								<label for="NewPackageComplement">Complementary Services Provided with the Package: </label>
+								<input name="PackageComplement" id="NewPackageComplement" placeholder="Complementary Services Provided with the Package"/>
+								<br><br>
+								<label for="ResortImg">Update Resort Images: </label>
+								<input type="file" id="ResortImg"  accept="image/*" multiple/>
+								<br><br>
+								<input type="submit" value="Update Details"/>
+								<input type="reset" value="Reset Fields"/>
+								<button class='btn' onclick="edit()">Cancel</button>
+							</form>
+						</div>
+					</div>
+				</section>
 
 	</section>
 
@@ -301,13 +331,13 @@
 					if (a==1)
 						{
 							document.getElementById("Packages").setAttribute('class', null);
-							document.getElementById("AddProduct").style.display="none";
+							document.getElementById("AddPackage").style.display="none";
 							return a=0;
 						}
 					else
 						{
 							document.getElementById("Packages").setAttribute('class', 'BlurBg');
-							document.getElementById("AddProduct").style.display="inline-block";
+							document.getElementById("AddPackage").style.display="inline-block";
 							return a=1;
 						}
 				}
