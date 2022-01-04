@@ -68,3 +68,22 @@ body{
 	width:68%;
 	float:right;
 }
+
+
+@media screen and (max-width: 750px) {
+	.user-img-part, .comment {
+		width: 100%;
+		display: block;
+		clear: both;
+	}
+	.comment-part {
+		padding: 2.5vh 2.5vh;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	.comment-part {
+		margin: 2.5vh 0;
+	}
+}
